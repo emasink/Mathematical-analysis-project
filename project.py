@@ -68,6 +68,17 @@ for i in compare_image_tiles:
     brightness_array_2.append(round(calculate_brightness(i), 4))
 #    print(round(calculate_brightness(i), 4))
 
+maxDistance = 0
+for i in range(0, len(brightness_array_1)):
+    distance = abs(brightness_array_1[i] - brightness_array_2[i])
+    if distance > maxDistance:
+        maxDistance = distance
+
+
+print(maxDistance)
+    # print(str(brightness_array_1[i]) + "     " + str(brightness_array_2[i]))
+
+
 x_axis = get_length_list(image_tiles)
 plt.plot(x_axis, brightness_array_1)
 plt.plot(x_axis, brightness_array_2)
